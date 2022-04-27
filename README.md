@@ -1,2 +1,2 @@
-# CREATIVES_REVV
-My_designs
+# CREATIVES_REVV reportcard generator
+Am trying to design reportcard generator.
