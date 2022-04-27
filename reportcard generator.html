@@ -1,0 +1,134 @@
+﻿<!DOCTYPE html>
+<html><br><br>
+
+<body bgcolor="cadetblue">
+	<center>
+	<table border="0" cellspacing="0" bgcolor="white">
+		<caption><b>Input Marks</b></caption>
+		<tr>
+			<th rowspan="2">Name</th>
+                        
+			<th colspan="7">Score</th>
+
+		</tr>
+		<tr>
+			<th>Mathematics</th>
+			<th>English</th>
+			<th>Kiswahili</th>
+			<th>Biology</th>
+                        <th>Chemistry</th>
+                        <th>Physic</th>
+                        <th>Geography</th>
+                       <th>Class Teacher Remarks</th>
+                       
+
+		</tr>
+		<tr>
+			<td><input type="text" id="name"></td>
+			<td><input type="text" id="ma"></td>
+			<td><input type="text" id="en"></td>
+			<td><input type="text" id="kis"></td>
+			<td><input type="text" id="bio"></td>
+                        <td><input type="text" id="chem"></td>
+			<td><input type="text" id="phy"></td>
+			<td><input type="text" id="geo"></td>
+                        <td><input type="text" id="ctr"></td>
+		</tr>
+		<tr>
+			<th colspan="8" height="30">
+			<input type="submit" value="Add Data" onclick="Sub()"></th>
+		</tr>	
+	</table>
+	<br>
+	<table border="1" cellspacing="5" bgcolor="white"
+		height="100" width="500" cellpadding="5" id="TableScore">
+		<caption><b>Student Data</b></caption>
+		<tr>
+			<th width="180">Name</th>
+			<th>Total</th>
+			<th>Average</th>
+                        <th width="580">Class teacher remarks</th>
+                        <th>Mean Grade</th>
+                           
+
+		</tr>
+		
+	</table>
+	</center>
+	<script type="text/javascript">
+		function Sub(){
+			var a, b, c, d, e, f, g, h, sum, avg,i, mg;
+			a=(document.getElementById('name').value);
+			b=parseFloat(document.getElementById('ma').value);
+			c=parseFloat(document.getElementById('en').value);
+		        d=parseFloat(document.getElementById('kis').value);
+			e=parseFloat(document.getElementById('bio').value);
+                        f=parseFloat(document.getElementById('chem').value);
+			g=parseFloat(document.getElementById('phy').value);
+			h=parseFloat(document.getElementById('geo').value);
+                        i=(document.getElementById('ctr').value);
+
+			// Calculating Total
+			sum=b+c+d+e+f+g+h;
+			avg=sum/7;
+                       
+			// Display on Student Data
+			var newTable = document.getElementById('TableScore');
+			var row = newTable.insertRow(-1);
+			var cell1 = row.insertCell(0);
+			var cell2 = row.insertCell(0);
+			var cell3 = row.insertCell(0);
+			var cell4 = row.insertCell(0);
+                        var cell5 = row.insertCell(0);
+			
+
+			cell5.innerHTML= a;
+			cell4.innerHTML=sum;
+			cell3.innerHTML = avg;
+                        cell2.innerHTML = i;
+                        cell2.innerHTML = mg;
+                      
+                        
+
+                       
+
+			if(avg>=80 && avg <=100){
+			  cell1.innerHTML="<font color=green>A</font>";
+                        }
+                        else if(avg>=79 && avg <=76){
+                               cell1.innerHTML="<font color=green>B+</font>";
+                        }
+                        else if(avg>=60 && avg<=75){
+                               cell1.innerHTML="<font color=green>B</font>";
+                        }
+                        else if(avg>=53 && avg<=59){
+                               cell1.innerHTML="<font color=green>B-</font>";
+                        }
+                        else if(avg>=46 && avg<=52){
+                               cell1.innerHTML="<font color=green>C+</font>";
+                        }
+                        else if(avg>=41 && avg<=45){
+                              cell1.innerHTML="<font color=green>C</font>";
+                        }
+                        else if(avg>=36 && avg<=40){
+                               cell1.innerHTML="<font color=green>C-</font>";
+                        }
+                        else if(avg>=31 && avg<=35){
+                               cell1.innerHTML="<font color=green>D+</font>";
+                        }
+                        else if(avg>=26 && avg<=30){
+                               cell1.innerHTML="<font color=green>D-</font>";
+                        }
+                        else if(avg>=21 && avg<=25){
+                              cell1.innerHTML="<font color=green>D</font>";
+                        }
+                        else if(avg>=16 && avg<=20){
+                              cell1.innerHTML="<font color=green>D-</font>";
+                        
+			}else{
+				cell1.innerHTML="<font color=red>E</font>";
+			}
+		}
+	</script>
+</body>
+</html>
